@@ -1,11 +1,11 @@
-import { ThemeProvider } from '@/components/providers'
+import { Layout } from '@/components/layout'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="blog-theme">
+    <Layout>
       <Component {...pageProps} />
-    </ThemeProvider>
+    </Layout>
   )
 }
