@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+
 import { Footer } from '../footer'
 import { Header } from '../header'
 
@@ -13,11 +14,9 @@ const inter = Inter({
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={`relative flex min-h-screen flex-col dark ${inter.className}`}>
+    <div className={`dark relative flex min-h-screen flex-col ${inter.className}`}>
       <Header />
-      <main className="flex flex-1 flex-col bg-black">
-        {children}
-      </main>
+      <main className="flex flex-1 flex-col bg-black">{children}</main>
       <Footer />
     </div>
   )

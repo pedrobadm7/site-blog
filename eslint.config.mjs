@@ -9,31 +9,54 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
 
-const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  {
-    rules: {
-      // Formatting rules
-      'indent': ['error', 2],
-      'quotes': ['error', 'single', { 'avoidEscape': true }],
-      'semi': ['error', 'never'],
-      'comma-dangle': ['error', 'always-multiline'],
-      'object-curly-spacing': ['error', 'always'],
-      'array-bracket-spacing': ['error', 'never'],
-      'space-before-blocks': ['error', 'always'],
-      'keyword-spacing': ['error', { 'before': true, 'after': true }],
-      'space-infix-ops': 'error',
-      'eol-last': ['error', 'always'],
-      'no-trailing-spaces': 'error',
-      'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }],
+// Modern ESLint plugins
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+import prettierPlugin from 'eslint-plugin-prettier'
+import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
+import unusedImportsPlugin from 'eslint-plugin-unused-imports'
 
-      // General code quality
+const eslintConfig = [
+  // Base Next.js recommendations (core web vitals + TS)
+  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+
+  // Project-specific rules / plugins ----------------------------
+  {
+    plugins: {
+      // Register plugins for Flat config usage
+      '@typescript-eslint': tsPlugin,
+      'unused-imports': unusedImportsPlugin,
+      'simple-import-sort': simpleImportSortPlugin,
+      tailwindcss: tailwindcssPlugin,
+      prettier: prettierPlugin,
+    },
+
+    rules: {
+      /* ---------------- Code-quality rules --------------- */
       'no-console': 'warn',
       'no-debugger': 'error',
-      'no-unused-vars': 'off', // Using TypeScript version instead
-      '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+
+      // Rely on TS for unused vars detection
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
+
+      /* ---------------- Import sanitising ---------------- */
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+      ],
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+
+      /* ---------------- Tailwind CSS --------------------- */
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'off',
+
+      /* ---------------- Prettier ------------------------- */
+      'prettier/prettier': ['error'],
     },
   },
 ]
