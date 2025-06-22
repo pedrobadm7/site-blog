@@ -2,8 +2,10 @@ import { HeartHandshake, PaintbrushVertical, Store } from 'lucide-react'
 
 export const SupportSection = () => {
   return (
-    <section className="bg-gray-700 pb-8 md:py-10">
-      <div className="container flex flex-col items-center gap-12">
+    <section className="relative bg-gray-700 pb-8 md:py-10">
+      <div className="absolute inset-0 hidden bg-[url('/background-features.svg')] bg-cover bg-center bg-no-repeat opacity-90 md:block" />
+
+      <div className="container relative flex flex-col items-center gap-12">
         <h2 className="text-balance text-center font-sans text-heading-xl text-gray-100">
           Sua loja de afiliados, simples, do jeito que deveria ser
         </h2>
@@ -15,7 +17,7 @@ export const SupportSection = () => {
             </div>
 
             <strong className="text-heading-sm text-gray-100">Personalize seu site</strong>
-            <p className="text-body-sm text-gray-200">
+            <p className="font-inter text-body-sm text-gray-200">
               Adicione sua logo, favicon, cores no seu catalago e tenha tudo com a sua cara.
             </p>
           </div>
@@ -26,7 +28,7 @@ export const SupportSection = () => {
             </div>
 
             <strong className="text-heading-sm text-gray-100">Venda de qualquer loja</strong>
-            <p className="text-body-sm text-gray-200">
+            <p className="font-inter text-body-sm text-gray-200">
               Não importa a loja, o Site.Set permite que você insera qualquer link de afiliado.
             </p>
           </div>
@@ -37,7 +39,7 @@ export const SupportSection = () => {
             </div>
 
             <strong className="text-heading-sm text-gray-100">Receba suporte amigável</strong>
-            <p className="text-body-sm text-gray-200">
+            <p className="font-inter text-body-sm text-gray-200">
               Nossa equipe estará sempre pronta para te atender para ajudar no que for preciso.
             </p>
           </div>

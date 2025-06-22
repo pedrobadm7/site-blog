@@ -5,8 +5,10 @@ import { Button } from '../ui/button'
 
 export const CallToAction = () => {
   return (
-    <section className="bg-gradient-to-b from-cyan-950 to-gray-500 py-24">
-      <div className="container">
+    <section className="relative bg-gradient-to-b from-cyan-950 to-gray-500 py-24">
+      <div className="absolute inset-0 hidden bg-[url('/background-footer.svg')] bg-cover bg-center bg-no-repeat opacity-90 md:block" />
+
+      <div className="container relative">
         <div className="flex flex-col items-center gap-6 text-center">
           <div className="w-fit rounded-full bg-cyan-300 p-4">
             <Store className="text-cyan-100" />
