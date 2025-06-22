@@ -8,7 +8,7 @@ const ptSansCaption = PT_Sans_Caption({
 
 export const SupportSection = () => {
   return (
-    <section className="      bg-gray-700 pb-8 md:py-10">
+    <section className="bg-gray-700 pb-8 md:py-10">
       <div className="container flex flex-col items-center gap-12">
         <h2
           className={`${ptSansCaption.className} text-balance text-center text-heading-xl text-gray-100`}

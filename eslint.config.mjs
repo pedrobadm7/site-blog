@@ -57,6 +57,8 @@ const eslintConfig = [
 
       /* ---------------- Prettier ------------------------- */
       'prettier/prettier': ['error'],
+
+      'tailwindcss/no-contradicting-classname': 'warn',
     },
   },
 ]
