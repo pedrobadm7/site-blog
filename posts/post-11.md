@@ -5,7 +5,7 @@ date: 2024-11-25
 image: https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop
 author: {
   name: Camila Torres,
-  avatar: https://images.unsplash.com/photo-1494790108755-2616b332c1b4?w=150&h=150&fit=crop&crop=face
+  avatar: https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face
 }
 ---
 

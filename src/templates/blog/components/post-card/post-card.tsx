@@ -28,7 +28,7 @@ export const PostCard = ({ slug, title, description, author, date, image }: Post
           </div>
           <Image
             src={image}
-            alt=""
+            alt={title}
             width={288}
             height={144}
             className="h-40 w-full rounded-t-[8px] object-cover object-center"
@@ -42,7 +42,12 @@ export const PostCard = ({ slug, title, description, author, date, image }: Post
 
           <div className="flex items-center gap-3 border-t border-gray-400 py-4">
             <div className="relative h-5 w-5 overflow-hidden rounded-full border-[1px] border-blue-200 md:h-6 md:w-6">
-              <Image src={author?.avatar} alt="" fill className="rounded-md object-cover" />
+              <Image
+                src={author?.avatar}
+                alt={author.name}
+                fill
+                className="rounded-md object-cover"
+              />
             </div>
 
             <span className="text-body-xs text-gray-300">{author.name}</span>
