@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Avatar } from '@/components/avatar'
+
 type Author = {
   name: string
   avatar: string
@@ -41,15 +43,10 @@ export const PostCard = ({ slug, title, description, author, date, image }: Post
           <p className="line-clamp-3 text-body-sm text-gray-300">{description}</p>
 
           <div className="flex items-center gap-3 border-t border-gray-400 py-4">
-            <div className="relative h-5 w-5 overflow-hidden rounded-full border-[1px] border-blue-200 md:h-6 md:w-6">
-              <Image
-                src={author?.avatar}
-                alt={author.name}
-                fill
-                className="rounded-md object-cover"
-              />
-            </div>
-
+            <Avatar.Container>
+              <Avatar.Image src={author?.avatar} alt={author.name} size="xs" />
+              <Avatar.Title>{author.name}</Avatar.Title>
+            </Avatar.Container>
             <span className="text-body-xs text-gray-300">{author.name}</span>
           </div>
         </div>
