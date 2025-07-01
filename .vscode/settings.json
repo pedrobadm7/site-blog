@@ -1,7 +1,6 @@
 {
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "explicit"
   },
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
@@ -14,4 +13,8 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSaveMode": "file",
   "eslint.useFlatConfig": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
+  "typescript.format.semicolons": "remove",
+  "javascript.format.semicolons": "remove"
 }
